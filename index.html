@@ -1671,7 +1671,8 @@ function getUsedMethods(suggestions) {
       }
     });
   });
-  return [...usedKeys].map(k => METHOD_LIB[k]);
+  // 限制最多返回8个方法，避免PDF页面内容过多显示不完整
+  return [...usedKeys].slice(0, 8).map(k => METHOD_LIB[k]);
 }
 
 // ==================== 题目→能力维度映射（用于点击查看答题详情） ====================
